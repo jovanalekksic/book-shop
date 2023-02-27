@@ -1,31 +1,22 @@
 import React from "react";
 //https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1566425108l/33.jpg
-const OneBook = () => {
+const OneBook = (props) => {
   return (
-    <div>
-      <div className="card mb-3" style={{ maxWidth: 540 }}>
-        <div className="row g-0">
-          <div className="col-md-4">
-            <img
-              src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1566425108l/33.jpg"
-              className="img-fluid rounded-start"
-              alt=""
-            />
-          </div>
-          <div className="col-md-8">
-            <div className="card-body">
-              <h5 className="card-title">Card title</h5>
-              <p className="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </p>
-              <p className="card-text">
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </p>
-            </div>
-          </div>
-        </div>
+    <div className="card ms-5" style={{ width: 250 }}>
+      <img
+        src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1566425108l/33.jpg"
+        className="card-img-top"
+        alt=""
+      />
+      <div className="card-body">
+        <h5 className="card-title">{props.bookTitle}</h5>
+        <p className="card-text">{props.bookDesc}</p>
+        <button type="button" className="btn btn-primary">
+          Add
+        </button>
+        <button type="button" className="btn btn-danger">
+          Remove
+        </button>
       </div>
     </div>
   );

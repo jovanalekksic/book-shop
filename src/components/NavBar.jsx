@@ -1,4 +1,5 @@
 import React from "react";
+import { HiShoppingBag } from "react-icons/hi";
 
 const NavBar = () => {
   return (
@@ -6,7 +7,7 @@ const NavBar = () => {
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
-            Navbar
+            Bookstore
           </a>
           <button
             className="navbar-toggler"
@@ -28,18 +29,12 @@ const NavBar = () => {
                 Home
               </a>
               <a className="nav-link" href="#">
-                Features
+                Login
               </a>
-              <a className="nav-link" href="#">
-                Pricing
-              </a>
-              <a
-                className="nav-link disabled"
-                href="#"
-                tabIndex="-1"
-                aria-disabled="true"
-              >
-                Disabled
+
+              <a className="cart-items">
+                <HiShoppingBag size={26} />
+                <div className="cart-num">0</div>
               </a>
             </div>
           </div>
