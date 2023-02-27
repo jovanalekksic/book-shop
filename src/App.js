@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar';
 import Books from './components/Books';
+import { useState } from 'react';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
     books.map((book)=>{
       if(book.id==id){
         if (book.amount > 0) {
+          book.amount = book.amount - 1;
           console.log("book id=", book.id, "amount=", book.amount);
         }else{
           alert("Amount of books is already 0.")
@@ -28,7 +30,7 @@ function App() {
     
   };
 
-  const books=[
+  const [books,setBooks]=useState([
     {
       id:1,
       title: "Lord of the Rings: The Fellowship of the Ring",
@@ -57,7 +59,7 @@ function App() {
       description:"From an internationally acclaimed artist and social media force, a visually captivating showcase of art made from everyday objects-including tea bags, flower petals, and eggshells-with several do-it-yourself projectsHow to Paint Without a Brush.",
       amount:0,
     },
-  ];
+  ]);
 
   return (
     <div className='App'>
