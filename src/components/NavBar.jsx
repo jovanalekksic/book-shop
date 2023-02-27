@@ -1,7 +1,7 @@
 import React from "react";
 import { HiShoppingBag } from "react-icons/hi";
 
-const NavBar = () => {
+const NavBar = ({ cartNum }) => {
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -34,7 +34,7 @@ const NavBar = () => {
 
               <a className="cart-items">
                 <HiShoppingBag size={26} />
-                <div className="cart-num">0</div>
+                <div className="cart-num">{cartNum}</div>
               </a>
             </div>
           </div>

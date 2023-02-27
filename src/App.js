@@ -6,11 +6,13 @@ import { useState } from 'react';
 
 function App() {
 
-  const cartNum=0;
+  const [cartNum, setCartNum]=useState(0);
   const addToCart = (id) => {
     books.map((book)=>{
       if(book.id==id){
       book.amount = book.amount + 1;
+      const num=cartNum+1;
+      setCartNum(num);
       console.log("book id=", book.id, "amount=", book.amount);
       }
     })
@@ -21,6 +23,8 @@ function App() {
       if(book.id==id){
         if (book.amount > 0) {
           book.amount = book.amount - 1;
+          const num=cartNum-1;
+      setCartNum(num);
           console.log("book id=", book.id, "amount=", book.amount);
         }else{
           alert("Amount of books is already 0.")
