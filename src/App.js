@@ -8,6 +8,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 function App() {
 
+  const [cartBooks, setCartBooks]=useState([]);
   const [cartNum, setCartNum]=useState(0);
   const addToCart = (id) => {
     books.map((book)=>{
@@ -15,6 +16,7 @@ function App() {
       book.amount = book.amount + 1;
       const num=cartNum+1;
       setCartNum(num);
+      refreshCart();
       console.log("book id=", book.id, "amount=", book.amount);
       }
     })
@@ -27,6 +29,7 @@ function App() {
           book.amount = book.amount - 1;
           const num=cartNum-1;
       setCartNum(num);
+      refreshCart();
           console.log("book id=", book.id, "amount=", book.amount);
         }else{
           alert("Amount of books is already 0.")
@@ -35,6 +38,11 @@ function App() {
     })
     
   };
+
+  const refreshCart=()=>{
+    const newBooks=books.filter((books)=> books.amount>0);
+    setCartBooks(newBooks);
+  }
 
   const [books,setBooks]=useState([
     {
@@ -72,7 +80,7 @@ function App() {
       <NavBar cartNum={cartNum} />
       <Routes>
         <Route path='/' element={ <Books books={books} onAdd={addToCart} onRemove={removeFromCart}/> } />
-        <Route path='/cart' element={<Cart/>} />
+        <Route path='/cart' element={<Cart cartBooks={cartBooks} />} />
       </Routes>
     </BrowserRouter>
   );
