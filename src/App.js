@@ -5,6 +5,29 @@ import Books from './components/Books';
 
 function App() {
 
+  const cartNum=0;
+  const addToCart = (id) => {
+    books.map((book)=>{
+      if(book.id==id){
+      book.amount = book.amount + 1;
+      console.log("book id=", book.id, "amount=", book.amount);
+      }
+    })
+    
+  };
+  const removeFromCart = (id) => {
+    books.map((book)=>{
+      if(book.id==id){
+        if (book.amount > 0) {
+          console.log("book id=", book.id, "amount=", book.amount);
+        }else{
+          alert("Amount of books is already 0.")
+        }
+      }
+    })
+    
+  };
+
   const books=[
     {
       id:1,
@@ -38,8 +61,8 @@ function App() {
 
   return (
     <div className='App'>
-    <NavBar/>
-    <Books books={books} />
+    <NavBar cartNum={cartNum} />
+    <Books books={books} onAdd={addToCart} onRemove={removeFromCart} />
     </div>
   );
 }

@@ -6,11 +6,11 @@ import OneBook from "./OneBook";
 //https://m.media-amazon.com/images/I/615ZIxEDozL.jpg
 //https://www.booktopia.com.au/covers/600/9781647006747/0906/how-to-paint-without-a-brush.jpg
 
-const Books = ({ books }) => {
+const Books = ({ books, onAdd, onRemove }) => {
   return (
     <div className="all-books">
       {books.map((book) => (
-        <OneBook book={book} />
+        <OneBook key={book.id} book={book} onAdd={onAdd} onRemove={onRemove} />
       ))}
     </div>
   );

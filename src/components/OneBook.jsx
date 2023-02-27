@@ -1,6 +1,6 @@
 import React from "react";
 //https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1566425108l/33.jpg
-const OneBook = ({ book }) => {
+const OneBook = ({ book, onAdd, onRemove }) => {
   return (
     <div className="card ms-5" style={{ width: 250 }}>
       <img
@@ -14,10 +14,18 @@ const OneBook = ({ book }) => {
         <div className="card-footer text-muted">
           <p>{book.author}</p>
         </div>
-        <button type="button" className="btn btn-primary">
+        <button
+          type="button"
+          className="btn btn-primary"
+          onClick={() => onAdd(book.id)}
+        >
           Add
         </button>
-        <button type="button" className="btn btn-danger">
+        <button
+          type="button"
+          className="btn btn-danger"
+          onClick={() => onRemove(book.id)}
+        >
           Remove
         </button>
       </div>
