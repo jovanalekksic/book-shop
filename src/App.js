@@ -3,6 +3,8 @@ import './App.css';
 import NavBar from './components/NavBar';
 import Books from './components/Books';
 import { useState } from 'react';
+import Cart from './components/Cart';
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 function App() {
 
@@ -66,10 +68,13 @@ function App() {
   ]);
 
   return (
-    <div className='App'>
-    <NavBar cartNum={cartNum} />
-    <Books books={books} onAdd={addToCart} onRemove={removeFromCart} />
-    </div>
+    <BrowserRouter className='App'>
+      <NavBar cartNum={cartNum} />
+      <Routes>
+        <Route path='/' element={ <Books books={books} onAdd={addToCart} onRemove={removeFromCart}/> } />
+        <Route path='/cart' element={<Cart/>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

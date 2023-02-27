@@ -1,14 +1,15 @@
 import React from "react";
 import { HiShoppingBag } from "react-icons/hi";
+import { Link } from "react-router-dom";
 
 const NavBar = ({ cartNum }) => {
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
+          <Link className="navbar-brand" to="/">
             Bookstore
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -32,10 +33,10 @@ const NavBar = ({ cartNum }) => {
                 Login
               </a>
 
-              <a className="cart-items">
+              <Link to="/cart" className="cart-items">
                 <HiShoppingBag size={26} />
                 <div className="cart-num">{cartNum}</div>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
