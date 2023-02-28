@@ -26,10 +26,10 @@ const NavBar = ({ cartNum }) => {
             id="navbarNavAltMarkup"
           >
             <div className="navbar-nav ">
-              <a className="nav-link active" aria-current="page" href="#">
+              <Link className="nav-link active" aria-current="page" to="/cart">
                 Cart
-              </a>
-              <Link className="nav-link" to="/contact">
+              </Link>
+              <Link className="nav-link" to="/feedback">
                 Feedback
               </Link>
               <Link to="/cart" className="cart-items me-auto mb-2">
