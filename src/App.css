@@ -1,15 +1,13 @@
-/* .navBar {
-  display: flex;
-  flex-direction: row;
-  background-color: rgb(211, 211, 211);
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: rgb(175, 175, 175);
-  align-items: center;
-  min-height: 40px;
-  padding-left: 25px;
-  font-size: large;
-}*/
+body{
+  background-color:rgb(245, 237, 226);
+  background-image: url("https://img.rawpixel.com/private/static/images/website/2022-05/v880-techi-08-job598.jpg?w=1200&h=1200&dpr=1&fit=clip&crop=default&fm=jpg&q=75&vib=3&con=3&usm=15&cs=srgb&bg=F4F4F3&ixlib=js-2.2.1&s=8a197e32ecdcc6aa4b5e1d277961cc56");
+  /* background-image: url("https://w0.peakpx.com/wallpaper/13/213/HD-wallpaper-beige-marble-texture-stone-texture-marble-background-marble-texture-beige-stone-background.jpg"); */
+ 
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%; 
+
+}
 
 .cart-items {
   display: flex;
@@ -34,7 +32,7 @@
 .all-books {
   display: flex;
   margin: 10px;
-  
+  justify-content: center;
 }
 
 .card {
