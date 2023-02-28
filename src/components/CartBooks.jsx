@@ -1,6 +1,7 @@
 import React from "react";
+
 //https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1566425108l/33.jpg
-const CartBooks = ({ book }) => {
+const CartBooks = ({ book, onRemove }) => {
   return (
     <div className="card ms-5" style={{ width: 250 }}>
       <img src={book.image} className="card-img-top" alt="" />
@@ -11,6 +12,13 @@ const CartBooks = ({ book }) => {
           <p>{book.author}</p>
         </div>
         <h3>Amount: {book.amount} </h3>
+        <button
+          type="button"
+          className="btn btn-danger"
+          onClick={() => onRemove(book.id)}
+        >
+          Remove
+        </button>
       </div>
     </div>
   );

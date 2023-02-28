@@ -93,7 +93,7 @@ function App() {
       <NavBar cartNum={cartNum} />
       <Routes>
         <Route path='/' element={ <Books books={books} onAdd={addToCart} onRemove={removeFromCart}/> } />
-        <Route path='/cart' element={<Cart cartBooks={cartBooks} />} />
+        <Route path='/cart' element={<Cart cartBooks={cartBooks} onRemove={removeFromCart}/>} />
         <Route path='/feedback' element={<Contact/> } />
       </Routes>
     </BrowserRouter>
