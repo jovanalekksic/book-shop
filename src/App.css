@@ -14,7 +14,7 @@
 .cart-items {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items:center;
   margin-left: 20px;
   
 }
@@ -88,4 +88,10 @@ a {
 .card-img-left {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+}
+.form{
+  padding-top: 10%;
+  display: block;
+  width: 30%;
+  margin: 0 auto;
 }

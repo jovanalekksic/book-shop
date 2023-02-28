@@ -25,15 +25,14 @@ const NavBar = ({ cartNum }) => {
             className="collapse navbar-collapse show"
             id="navbarNavAltMarkup"
           >
-            <div className="navbar-nav">
+            <div className="navbar-nav ">
               <a className="nav-link active" aria-current="page" href="#">
-                Home
+                Cart
               </a>
-              <a className="nav-link" href="#">
-                Login
-              </a>
-
-              <Link to="/cart" className="cart-items">
+              <Link className="nav-link" to="/contact">
+                Feedback
+              </Link>
+              <Link to="/cart" className="cart-items me-auto mb-2">
                 <HiShoppingBag size={26} />
                 <div className="cart-num">{cartNum}</div>
               </Link>

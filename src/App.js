@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar';
 import Books from './components/Books';
+import Contact from './components/Contact';
 import { useState } from 'react';
 import Cart from './components/Cart';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
@@ -16,7 +17,11 @@ function App() {
       book.amount = book.amount + 1;
       const num=cartNum+1;
       setCartNum(num);
+      if(book.amount===1){
+        updateCart(book);
+      }else{
       refreshCart();
+      }
       console.log("book id=", book.id, "amount=", book.amount);
       }
     })
@@ -43,6 +48,10 @@ function App() {
     const newBooks=books.filter((books)=> books.amount>0);
     setCartBooks(newBooks);
   }
+
+  const updateCart=(book)=>{
+    setCartBooks([...cartBooks,book]);
+  };
 
   const [books,setBooks]=useState([
     {
@@ -81,6 +90,7 @@ function App() {
       <Routes>
         <Route path='/' element={ <Books books={books} onAdd={addToCart} onRemove={removeFromCart}/> } />
         <Route path='/cart' element={<Cart cartBooks={cartBooks} />} />
+        <Route path='/contact' element={<Contact/> } />
       </Routes>
     </BrowserRouter>
   );
